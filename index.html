@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PL Title Race · 2025/26</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/src/styles/main.css">
+</head>
+<body>
+<div class="shell">
+
+  <!-- Top bar -->
+  <div class="topbar">
+    <div class="topbar-logo">
+      <div class="logo-dot"></div>
+      Premier League 2026 Title Race
+    </div>
+    <div class="topbar-right">
+      <div class="live-chip"><span class="live-dot"></span><span id="live-label">Live</span></div>
+      <div class="clock" id="clock">--:--:--</div>
+    </div>
+  </div>
+
+  <!-- Ticker -->
+  <div class="ticker">
+    <span class="ticker-label">Latest</span>
+    <span id="ticker-text">Loading…</span>
+  </div>
+
+  <!-- Score hero -->
+  <div class="score-hero">
+    <div class="team-card arsenal">
+      <div class="team-header">
+        <div class="crest arsenal">AFC</div>
+        <div>
+          <div class="team-name">Arsenal</div>
+          <div class="team-abbr" id="ars-mw">Matchweek 33</div>
+        </div>
+      </div>
+      <div class="pts-label">Points</div>
+      <div class="pts-display arsenal" id="ars-pts">71</div>
+      <div class="team-stats" id="ars-stats">
+        <div class="stat-line"><span class="sk">Record</span><span class="sv">W22 D5 L6</span></div>
+        <div class="stat-line"><span class="sk">Goal diff</span><span class="sv">+37</span></div>
+        <div class="stat-line"><span class="sk">Goals scored</span><span class="sv">63</span></div>
+        <div class="stat-line"><span class="sk">Games left</span><span class="sv">5</span></div>
+      </div>
+    </div>
+
+    <div class="vs-col">
+      <div class="vs-text">VS</div>
+      <div class="status-badge" id="gap-badge">Level on<br>points</div>
+    </div>
+
+    <div class="team-card city">
+      <div class="team-header">
+        <div class="crest city">MCI</div>
+        <div>
+          <div class="team-name">Man City</div>
+          <div class="team-abbr" id="city-mw">Matchweek 33</div>
+        </div>
+      </div>
+      <div class="pts-label">Points</div>
+      <div class="pts-display city" id="city-pts">71</div>
+      <div class="team-stats" id="city-stats">
+        <div class="stat-line"><span class="sk">Record</span><span class="sv">W22 D5 L6</span></div>
+        <div class="stat-line"><span class="sk">Goal diff</span><span class="sv">+36</span></div>
+        <div class="stat-line"><span class="sk">Goals scored</span><span class="sv">65</span></div>
+        <div class="stat-line"><span class="sk">Games left</span><span class="sv">6</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats strip -->
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-card-label">GD edge</div>
+      <div class="stat-card-val red" id="gd-adv">+1</div>
+      <div class="stat-card-sub" id="gd-adv-sub">Arsenal</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-label">Arsenal max pts</div>
+      <div class="stat-card-val red" id="ars-max">86</div>
+      <div class="stat-card-sub" id="ars-left-sub">5 games remaining</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-label">City max pts</div>
+      <div class="stat-card-val blue" id="city-max">89</div>
+      <div class="stat-card-sub" id="city-left-sub">6 games remaining</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-label">Games-in-hand edge</div>
+      <div class="stat-card-val neutral" id="gih-val">+3</div>
+      <div class="stat-card-sub" id="gih-sub">potential pts advantage</div>
+    </div>
+  </div>
+
+  <!-- GD bar -->
+  <div class="gd-card">
+    <div class="gd-header">
+      <span class="gd-title">Goal Difference</span>
+      <div class="gd-legend">
+        <div class="gd-leg-item"><div class="gd-sq red"></div><span id="gd-leg-ars">Arsenal +37</span></div>
+        <div class="gd-leg-item"><div class="gd-sq blue"></div><span id="gd-leg-city">City +36</span></div>
+      </div>
+    </div>
+    <div class="gd-track">
+      <div class="gd-bar-ars" id="gd-bar-ars" style="width:50.7%"></div>
+      <div class="gd-bar-city" id="gd-bar-city" style="width:49.3%"></div>
+    </div>
+  </div>
+
+  <!-- Fixtures + Tiebreakers -->
+  <div class="grid2">
+    <div class="panel">
+      <div class="panel-title">Remaining fixtures</div>
+
+      <div class="fix-group-label red">Arsenal · 5 games</div>
+      <div class="fix-row"><span class="fix-opp">Newcastle</span><span class="fix-meta">H · MW34 · Apr 26</span></div>
+      <div class="fix-row"><span class="fix-opp">Fulham</span><span class="fix-meta">H · MW35</span></div>
+      <div class="fix-row"><span class="fix-opp">West Ham</span><span class="fix-meta">A · MW36</span></div>
+      <div class="fix-row"><span class="fix-opp">Burnley</span><span class="fix-meta">H · MW37</span></div>
+      <div class="fix-row"><span class="fix-opp">Crystal Palace</span><span class="fix-meta">A · MW38</span></div>
+
+      <div class="fix-group-label blue" style="margin-top:14px;">Man City · 6 games</div>
+      <div class="fix-note">MW34 — FA Cup semi-final · no PL match</div>
+      <div class="fix-row"><span class="fix-opp">Everton</span><span class="fix-meta">A · MW35</span></div>
+      <div class="fix-row"><span class="fix-opp">Brentford</span><span class="fix-meta">H · MW36</span></div>
+      <div class="fix-row"><span class="fix-opp">Bournemouth</span><span class="fix-meta">A · MW37</span></div>
+      <div class="fix-row"><span class="fix-opp">Aston Villa</span><span class="fix-meta">H · MW38</span></div>
+      <div class="fix-row"><span class="fix-opp">Crystal Palace</span><span class="fix-meta">H · TBC (game in hand)</span></div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">Tiebreakers if level on points</div>
+      <div class="tie-row">
+        <span class="tie-n">1</span>
+        <div class="tie-body">
+          <div class="tie-crit">Goal difference</div>
+          <div class="tie-detail" id="tie-gd-detail">Arsenal +37 vs City +36</div>
+        </div>
+        <span class="tie-badge red">Arsenal</span>
+      </div>
+      <div class="tie-row">
+        <span class="tie-n">2</span>
+        <div class="tie-body">
+          <div class="tie-crit">Goals scored</div>
+          <div class="tie-detail" id="tie-gs-detail">City 65 vs Arsenal 63</div>
+        </div>
+        <span class="tie-badge blue">City</span>
+      </div>
+      <div class="tie-row">
+        <span class="tie-n">3</span>
+        <div class="tie-body">
+          <div class="tie-crit">H2H points this season</div>
+          <div class="tie-detail">City 4 pts (W + D) vs Arsenal 1</div>
+        </div>
+        <span class="tie-badge blue">City</span>
+      </div>
+      <div class="tie-row">
+        <span class="tie-n">4</span>
+        <div class="tie-body">
+          <div class="tie-crit">Away goals in H2H</div>
+          <div class="tie-detail">To be determined</div>
+        </div>
+        <span class="tie-badge neutral">TBD</span>
+      </div>
+      <div class="tie-row">
+        <span class="tie-n">5</span>
+        <div class="tie-body">
+          <div class="tie-crit">Playoff match</div>
+          <div class="tie-detail">Won't be needed — resolved above</div>
+        </div>
+        <span class="tie-badge neutral">N/A</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Simulator -->
+  <div class="sim-panel">
+    <div class="panel-title">Scenario simulator</div>
+    <div class="sim-grid">
+      <div>
+        <div class="sim-team-label red">Arsenal wins (of 5)</div>
+        <div class="slider-row">
+          <label>Wins</label>
+          <input type="range" class="r-red" id="ars-wins" min="0" max="5" value="4">
+          <span class="slider-val red" id="ars-wins-v">4</span>
+        </div>
+      </div>
+      <div>
+        <div class="sim-team-label blue">City wins (of 6)</div>
+        <div class="slider-row">
+          <label>Wins</label>
+          <input type="range" class="r-blue" id="city-wins" min="0" max="6" value="5">
+          <span class="slider-val blue" id="city-wins-v">5</span>
+        </div>
+      </div>
+    </div>
+    <div id="sim-result"></div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <span>Data: Premier League · Auto-updates every 60s</span>
+    <span id="footer-stamp"></span>
+  </div>
+
+</div>
+
+<script type="module" src="/src/js/main.js"></script>
+</body>
+</html>
